@@ -4,8 +4,7 @@
 #SBATCH -N 1
 #SBATCH -n 8
 #SBATCH -c 8
-#SBATCH --mail-type=BEGIN,END
-#SBATCH --mail-user=kishihama@quemix.com
+
 
 module purge
 module load oneapi_compiler/2023.0.0
@@ -18,8 +17,8 @@ echo "Current date and time: $(date)"
 BIN=${HOME}/local/film_feram/019_241006/build/src
 
 BASE_DIR=$(pwd)
-COORD_DIR="/home2/k0463/k046316/lab/feram/17PT/25_PT900to300K_-1to3per/5_scan_acoustic_900K/coord"
-# 改良点1: ディレクトリと数値のペアを配列で管理
+COORD_DIR="5_scan_acoustic_900K/coord"
+
 DIRS=(
     "1_z0.0200_300K.0000040000.coord:0.0200"
     "2_z0.0180_300K.0000040000.coord:0.0180"
